@@ -1,0 +1,195 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e0b36 0%, #0b0214 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #ffeb3b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #00e5ff;
+}
+
+/* Container Principal do Jogo */
+main {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Cartão do Jogo (Telas) */
+.game-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 3px solid #673ab7;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.game-card h2 {
+    color: #ffeb3b;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.game-card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Painel de Informações (HUD) */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #00e5ff;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* Texto da Pergunta */
+.question-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* Grid de Alternativas */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Botões Gerais */
+.btn {
+    background: linear-gradient(90deg, #ff4081, #e040fb);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(224, 64, 251, 0.4);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(224, 64, 251, 0.6);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Botões das Alternativas */
+.option-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid transparent;
+    padding: 14px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateX(5px);
+}
+
+/* Classes de Feedback (Acertou/Errou) */
+.correct {
+    background-color: #4caf50 !important;
+    border-color: #a1ffb8 !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.wrong {
+    background-color: #f44336 !important;
+    border-color: #ffb3b3 !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Botão de Próxima */
+#next-btn {
+    background: linear-gradient(90deg, #00c853, #b2ff59);
+    color: #111;
+    width: 100%;
+}
+
+/* Caixa de Pontuação Final */
+.final-score-box {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 2px solid #ffeb3b;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Classes Utilitárias */
+.hidden {
+    display: none !important;
+}
+
+/* Animação de Entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
