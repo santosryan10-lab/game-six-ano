@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1e0b36 0%, #0b0214 100%);
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -25,17 +25,17 @@ header {
 
 header h1 {
     font-size: 2.2rem;
-    color: #ffeb3b;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #a8ff78;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 5px;
 }
 
 header p {
     font-size: 1.1rem;
-    color: #00e5ff;
+    color: #78ffd6;
 }
 
-/* Container Principal do Jogo */
+/* Container Principal */
 main {
     width: 100%;
     max-width: 600px;
@@ -45,21 +45,21 @@ main {
     flex-grow: 1;
 }
 
-/* Cartão do Jogo (Telas) */
+/* Cartão do Jogo */
 .game-card {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 3px solid #673ab7;
-    border-radius: 20px;
-    padding: 30px;
+    backdrop-filter: blur(12px);
+    border: 3px solid #78ffd6;
+    border-radius: 24px;
+    padding: 35px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.4s ease-out;
 }
 
 .game-card h2 {
-    color: #ffeb3b;
+    color: #a8ff78;
     margin-bottom: 15px;
     font-size: 1.8rem;
 }
@@ -70,126 +70,122 @@ main {
     margin-bottom: 25px;
 }
 
-/* Painel de Informações (HUD) */
+/* Informações superiores (Placar) */
 .hud {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #00e5ff;
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
-}
-
-/* Texto da Pergunta */
-.question-container h3 {
-    font-size: 1.4rem;
     margin-bottom: 25px;
-    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #78ffd6;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+    padding-bottom: 12px;
 }
 
-/* Grid de Alternativas */
+/* Pergunta/Conta Matemática */
+.question-container h3 {
+    font-size: 2.2rem; /* Conta grande em destaque */
+    margin-bottom: 30px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    letter-spacing: 2px;
+}
+
+/* Alinhamento dos botões de respostas */
 .options-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de botões lado a lado */
     gap: 15px;
     margin-bottom: 25px;
 }
 
-/* Botões Gerais */
+/* Botões Principais */
 .btn {
-    background: linear-gradient(90deg, #ff4081, #e040fb);
+    background: linear-gradient(90deg, #ff8c00, #e52d27);
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 35px;
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 15px rgba(224, 64, 251, 0.4);
+    box-shadow: 0 4px 15px rgba(229, 45, 39, 0.4);
 }
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(224, 64, 251, 0.6);
+    box-shadow: 0 6px 20px rgba(229, 45, 39, 0.6);
 }
 
-.btn:active {
-    transform: scale(0.98);
-}
-
-/* Botões das Alternativas */
+/* Botões de Alternativas (Números) */
 .option-btn {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     border: 2px solid transparent;
-    padding: 14px;
-    font-size: 1.1rem;
-    border-radius: 12px;
+    padding: 18px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 16px;
     cursor: pointer;
-    text-align: left;
     transition: all 0.2s ease;
 }
 
 .option-btn:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #78ffd6;
 }
 
-/* Classes de Feedback (Acertou/Errou) */
+/* Feedback Visual (Certo/Errado) */
 .correct {
-    background-color: #4caf50 !important;
+    background-color: #2ecc71 !important;
     border-color: #a1ffb8 !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .wrong {
-    background-color: #f44336 !important;
+    background-color: #e74c3c !important;
     border-color: #ffb3b3 !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .disabled {
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
-/* Botão de Próxima */
+/* Próxima Pergunta */
 #next-btn {
-    background: linear-gradient(90deg, #00c853, #b2ff59);
-    color: #111;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    color: white;
     width: 100%;
 }
 
-/* Caixa de Pontuação Final */
+/* Caixa de Pontuação */
 .final-score-box {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    color: #ffeb3b;
+    color: #a8ff78;
     margin-bottom: 25px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     display: inline-block;
-    padding: 10px 30px;
-    border-radius: 15px;
-    border: 2px solid #ffeb3b;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 2px solid #a8ff78;
 }
 
 /* Rodapé */
 footer {
     margin-top: 20px;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
-/* Classes Utilitárias */
 .hidden {
     display: none !important;
 }
 
-/* Animação de Entrada */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
